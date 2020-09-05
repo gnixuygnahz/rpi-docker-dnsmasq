@@ -5,12 +5,12 @@ LABEL maintainer="936269759@qq.com"
 ENV WEBPROC_VERSION v0.4.0
 ENV WEBPROC_URL https://github.com/jpillora/webproc/releases/download/$WEBPROC_VERSION/webproc_0.4.0_linux_arm64.gz
 # fetch dnsmasq and webproc binary
-RUN apk update \
-	&& apk --no-cache add dnsmasq \
-	&& apk add --no-cache --virtual .build-deps curl \
-	&& curl -sL $WEBPROC_URL | gzip -d - > /usr/local/bin/webproc \
-	&& chmod +x /usr/local/bin/webproc \
-	&& apk del .build-deps
+RUN apk update 
+RUN apk --no-cache add dnsmasq 
+RUN apk add --no-cache --virtual .build-deps curl 
+RUN curl -sL $WEBPROC_URL | gzip -d - > /usr/local/bin/webproc 
+RUN chmod +x /usr/local/bin/webproc 
+RUN apk del .build-deps
 #configure dnsmasq
 RUN mkdir -p /etc/default/
 RUN echo -e "ENABLED=1\nIGNORE_RESOLVCONF=yes" > /etc/default/dnsmasq
