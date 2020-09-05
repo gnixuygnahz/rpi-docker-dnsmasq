@@ -1,4 +1,4 @@
-FROM alpine:a59906e33509d14c036c8678d687bd4eec81ed7c4b8ce907b888c607f6a1e0e6
+FROM alpine:edge:a59906e33509d14c036c8678d687bd4eec81ed7c4b8ce907b888c607f6a1e0e6
 
 LABEL maintainer="936269759@qq.com"
 # webproc release settings
