@@ -1,8 +1,9 @@
-FROM alpine:edge
-LABEL maintainer="dev@jpillora.com"
+FROM alpine@sha256:a59906e33509d14c036c8678d687bd4eec81ed7c4b8ce907b888c607f6a1e0e6
+
+LABEL maintainer="936269759@qq.com@"
 # webproc release settings
-ENV WEBPROC_VERSION 0.2.2
-ENV WEBPROC_URL https://github.com/jpillora/webproc/releases/download/$WEBPROC_VERSION/webproc_linux_amd64.gz
+ENV WEBPROC_VERSION v0.4.0
+ENV WEBPROC_URL https://github.com/jpillora/webproc/releases/download/$WEBPROC_VERSION/webproc_0.4.0_linux_arm64.gz
 # fetch dnsmasq and webproc binary
 RUN apk update \
 	&& apk --no-cache add dnsmasq \
